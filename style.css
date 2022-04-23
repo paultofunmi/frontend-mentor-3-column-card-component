@@ -1,0 +1,140 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --darker-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --light-gray: hsl(0, 0%, 95%)
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0px;
+    background: var(--light-gray);
+    color: var(--transparent-white);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    line-height: 1.6
+}
+
+main {
+    display: grid;
+    grid-template-areas: 
+        "sedan"
+        "suv"
+        "luxury";
+    border-radius: 10px;
+    margin: 4em auto;
+    width: 90%;
+    max-width: 250px;    
+}
+
+button {
+    background: var(--transparent-white);
+    padding: 10px 25px;
+    border: 0; 
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+section {
+    padding: 10px 40px;
+    /* border: solid thin red; */
+}
+
+section h1, section p, section button {
+    margin: 10px auto 20px auto;
+}
+
+section p {
+    font-weight: 200;
+}
+
+section h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sedan {
+    grid-area: sedan;
+    background-color: var(--bright-orange);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sedan button {
+    color: var(--bright-orange);
+}
+
+.sedan button:hover {
+    background-color: var(--bright-orange);
+    border: solid thin var(--transparent-white);
+    color: solid thin var(--transparent-white);
+}
+
+.suv {
+    grid-area: suv;
+    background-color: var(--dark-cyan);
+}
+
+.suv button {
+    color: var(--dark-cyan);
+}
+
+.suv button:hover {
+    background-color: var(--dark-cyan);
+    border: solid thin var(--transparent-white);
+    color: solid thin var(--transparent-white);
+}
+
+.luxury {
+    grid-area: luxury;
+    background-color: var(--darker-cyan);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.luxury button {
+    color: var(--darker-cyan);
+}
+
+.luxury button:hover {
+    background-color: var(--darker-cyan);
+    border: solid thin var(--transparent-white);
+    color: solid thin var(--transparent-white);
+}
+
+
+@media (min-width: 570px) {
+
+    .container {
+        max-width: 700px;
+        grid-template-areas: 
+        "sedan suv luxury";
+        height: 40%;
+    }
+
+    .sedan {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .luxury {
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    section button {
+        
+        margin-top: 80px;
+    }
+}
